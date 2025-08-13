@@ -1,0 +1,14 @@
+{
+  "name": "BigQuery Destination",
+  "definition_name": "BigQuery",
+  "configuration": {
+    "project_id": "${GCP_PROJECT_ID}",
+    "dataset_id": "${BIGQUERY_DATASET}",
+    "dataset_location": "${BIGQUERY_LOCATION}",
+    "loading_method": {
+      "method": "Standard Insertion"
+    },
+    "credentials_json": "${GCP_SA_KEY_JSON}"
+  }
+}
+
