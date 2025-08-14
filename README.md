@@ -12,6 +12,7 @@ You can run against a local Airbyte OSS instance (default) or any reachable Airb
 
 - Docker (only if you need to run Airbyte locally). Follow Airbyte OSS quickstart from their docs to start the platform
 - Python 3.9+
+- uv (Python package manager). macOS: `brew install uv` or see `https://docs.astral.sh/uv/`
 - An Airbyte instance URL (default `http://localhost:8000`)
 - AWS credentials with read access to your S3 bucket
 - GCP service account with BigQuery permissions and a JSON key file
@@ -50,7 +51,7 @@ cp .env.example .env
 2) Prepare Python environment
 
 ```
-make install
+make install   # uses uv to create a local .venv and install deps
 ```
 
 3) Fill config templates
@@ -67,7 +68,7 @@ make install
 5) Provision S3 → BigQuery
 
 ```
-make s3_to_bigquery
+make s3_to_bigquery   # runs via uv
 ```
 
 The script will:

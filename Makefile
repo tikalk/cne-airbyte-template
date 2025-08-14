@@ -1,12 +1,17 @@
-PY ?= python3
-PIP ?= pip3
+UV ?= uv
 
-.PHONY: install s3_to_bigquery
+.PHONY: install s3_to_bigquery run lock
 
 install:
-	$(PIP) install -r requirements.txt
+	$(UV) sync
 
 s3_to_bigquery:
-	$(PY) scripts/s3_to_bigquery.py
+	$(UV) run scripts/s3_to_bigquery.py
+
+run:
+	$(UV) run scripts/s3_to_bigquery.py
+
+lock:
+	$(UV) lock
 
 
