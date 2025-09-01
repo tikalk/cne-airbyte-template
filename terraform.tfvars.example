@@ -1,0 +1,9 @@
+WORKSPACE_ID                        =
+PASSWORD                            =
+USERNAME                            =
+SERVER_URL                          =
+SERVICE_ACCOUNT_INFO                =
+AWS_ACCESS_KEY_ID                   =
+AWS_SECRET_ACCESS_KEY               =
+BIGQUERY_PROJECT_ID                 =
+GOOGLE_MEETING_SA                   =
