@@ -11,6 +11,7 @@ variable "configuration" {
     aws_access_key_id     = string
     aws_secret_access_key = string
     bucket                = string
+    region                = optional(string, "us-east-1")
 
     streams = list(object({
       name                            = string

@@ -1,44 +1,24 @@
 variable "destination_id" {
   type = string
+  description = "Airbyte destination ID"
 }
 
 variable "name" {
   type = string
+  description = "Connection name"
 }
 
 variable "namespace_definition" {
   type = string
+  description = "Namespace definition type"
 }
 
 variable "namespace_format" {
   type = string
-}
-
-variable "non_breaking_schema_updates_behavior" {
-  type = string
+  description = "Namespace format string"
 }
 
 variable "source_id" {
   type = string
-}
-
-variable "status" {
-  type = string
-}
-
-variable "schedule" {
-  type = object({
-    schedule_type   = string
-    cron_expression = string
-  })
-}
-
-variable "streams" {
-  type = list(object({
-    sync_mode   = string
-    name        = string
-    selected    = bool
-    primary_key = optional(list(list(string)))
-
-  }))
+  description = "Airbyte source ID"
 }

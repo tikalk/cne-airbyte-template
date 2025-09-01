@@ -13,13 +13,15 @@ locals {
         aws_access_key_id     = var.AWS_ACCESS_KEY_ID
         aws_secret_access_key = var.AWS_SECRET_ACCESS_KEY
         bucket                = "cne-ai-airbyte-source"
+        region                = "us-east-1"
         streams = [
           {
             name                            = "customers_data"
             days_to_sync_if_history_is_full = 3
-            schemaless                      = true
+            schemaless                      = false
             globs                           = ["customers_data.csv"]
             validation_policy               = "Emit Record"
+            input_schema                    = file("${path.root}/schemas/customers_data_schema.json")
             format = {
               "csv_format" = {
                 header_definition = {

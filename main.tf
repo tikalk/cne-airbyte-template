@@ -27,13 +27,9 @@ module "connections" {
   source   = "./connections"
   for_each = local.connections[trimprefix(terraform.workspace, "cne-airbyte-template-")]
 
-  destination_id                       = each.value.destination_id
-  name                                 = each.key
-  namespace_definition                 = each.value.namespace_definition
-  namespace_format                     = lookup(each.value, "namespace_format", null)
-  non_breaking_schema_updates_behavior = each.value.non_breaking_schema_updates_behavior
-  source_id                            = each.value.source_id
-  status                               = each.value.status
-  streams                              = each.value.streams
-  schedule                             = each.value.schedule
+  destination_id       = each.value.destination_id
+  name                 = each.key
+  namespace_definition = each.value.namespace_definition
+  namespace_format     = lookup(each.value, "namespace_format", null)
+  source_id            = each.value.source_id
 }
